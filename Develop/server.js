@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3000;
 
 const app = express();
-const seeders = require("./seeders/seed");
+//const seeders = require("./seeders/seed");
 
 app.use(logger("dev"));
 
@@ -18,7 +18,6 @@ app.use(express.static("public"));
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
   useUnifiedTopology: true
-  // useFindAndModify: false
 });
 
 //Routes
