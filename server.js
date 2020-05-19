@@ -6,9 +6,7 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3000;
 
 const app = express();
-//const seeders = require("./seeders/seed");
 
-app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -21,8 +19,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 });
 
 //Routes
-app.use(require("../Develop/routes/api"));
-app.use(require("../Develop/routes/html"));
+app.use(require("../WorkoutTracker/routes/api"));
+app.use(require("../WorkoutTracker/routes/html"));
 
 // Start the server
 app.listen(PORT, () => {
